@@ -17,6 +17,12 @@ public class BankApp {
             throw new RuntimeException("No account is found for this client");
         }
 
+        Account clientAccount = pierreJeanAccount;
+
+        if(clientAccount.getBalance() < amount){
+            throw new RuntimeException();
+        }
+
         return 0.0;
     }
 }

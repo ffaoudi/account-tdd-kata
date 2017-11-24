@@ -49,4 +49,9 @@ public class BankTest {
         assertNotNull(exception);
         assertEquals("No account is found for this client", exception.getMessage());
     }
+
+    @Test(expected = RuntimeException.class)
+    public final void whenAccountExistWithInsufficientBalanceThenThrownException(){
+        bankApp.withdrawsAmountFromClientAccount("jean-pierre", 110.0);
+    }
 }
