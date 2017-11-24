@@ -72,4 +72,11 @@ public class BankTest {
     public final void whenAccountExistWithSufficientBalanceThenWithdraw(){
         assertEquals(100.0 - 10.0, bankApp.withdrawsAmountFromClientAccount("pierre-jean", 10.0), 0);
     }
+
+    @Test(expected = RuntimeException.class)
+    public final void whenAccountExistWithInsufficientBalanceForMultipleWithdrawThenThrownException(){
+        assertEquals(100.0 - 10.0, bankApp.withdrawsAmountFromClientAccount("pierre-jean", 10.0), 0);
+        assertEquals(100.0 - 10.0 - 50.0, bankApp.withdrawsAmountFromClientAccount("pierre-jean", 50.0), 0);
+        bankApp.withdrawsAmountFromClientAccount("pierre-jean", 50.0);
+    }
 }
