@@ -32,4 +32,9 @@ public class BankTest {
         assertEquals("Empty client name is not allowed", exception.getMessage());
     }
 
+    @Test(expected = RuntimeException.class)
+    public final void whenNoAccountForClientNameThenThrownException(){
+        bankApp.withdrawsAmountFromClientAccount("test", 10.0);
+    }
+
 }
