@@ -54,4 +54,17 @@ public class BankTest {
     public final void whenAccountExistWithInsufficientBalanceThenThrownException(){
         bankApp.withdrawsAmountFromClientAccount("jean-pierre", 110.0);
     }
+
+    @Test
+    public final void whenAccountExistWithInsufficientBalanceThenThrownExceptionWithMessage(){
+        RuntimeException exception = null;
+        try {
+            bankApp.withdrawsAmountFromClientAccount("pierre-jean", 110.0);
+        } catch (RuntimeException e){
+            exception = e;
+        }
+
+        assertNotNull(exception);
+        assertEquals("Insufficient balance, your balance is: 100.0", exception.getMessage());
+    }
 }

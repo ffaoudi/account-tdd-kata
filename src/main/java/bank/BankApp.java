@@ -20,7 +20,7 @@ public class BankApp {
         Account clientAccount = pierreJeanAccount;
 
         if(clientAccount.getBalance() < amount){
-            throw new RuntimeException();
+            throw new RuntimeException("Insufficient balance, your balance is: " + clientAccount.getBalance());
         }
 
         return 0.0;
