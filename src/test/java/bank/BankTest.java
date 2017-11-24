@@ -37,4 +37,16 @@ public class BankTest {
         bankApp.withdrawsAmountFromClientAccount("test", 10.0);
     }
 
+    @Test
+    public final void whenNoAccountForClientNameThenThrownExceptionWithMessage(){
+        RuntimeException exception = null;
+        try {
+            bankApp.withdrawsAmountFromClientAccount("test", 10.0);
+        } catch (RuntimeException e){
+            exception = e;
+        }
+
+        assertNotNull(exception);
+        assertEquals("No account is found for this client", exception.getMessage());
+    }
 }

@@ -14,7 +14,7 @@ public class BankApp {
         }
 
         if(!clientName.equals(pierreJeanAccount.getClientName())){
-            throw new RuntimeException();
+            throw new RuntimeException("No account is found for this client");
         }
 
         return 0.0;
