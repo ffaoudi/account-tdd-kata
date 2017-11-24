@@ -23,6 +23,8 @@ public class BankApp {
             throw new RuntimeException("Insufficient balance, your balance is: " + clientAccount.getBalance());
         }
 
-        return 0.0;
+        clientAccount.setBalance(clientAccount.getBalance() - amount);
+
+        return clientAccount.getBalance();
     }
 }

@@ -67,4 +67,9 @@ public class BankTest {
         assertNotNull(exception);
         assertEquals("Insufficient balance, your balance is: 100.0", exception.getMessage());
     }
+
+    @Test
+    public final void whenAccountExistWithSufficientBalanceThenWithdraw(){
+        assertEquals(100.0 - 10.0, bankApp.withdrawsAmountFromClientAccount("pierre-jean", 10.0), 0);
+    }
 }
