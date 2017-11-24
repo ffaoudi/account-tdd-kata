@@ -91,4 +91,17 @@ public class BankTest {
     public final void whenAccountExistWithSufficientBalanceAndNegativeAmountThenThrownException(){
         bankApp.withdrawsAmountFromClientAccount("pierre-jean", -10.0);
     }
+
+    @Test
+    public final void whenAccountExistWithSufficientBalanceAndNegativeAmountThenThrownExceptionWithMessage(){
+        RuntimeException exception = null;
+        try {
+            bankApp.withdrawsAmountFromClientAccount("pierre-jean", -10.0);
+        } catch (RuntimeException e){
+            exception = e;
+        }
+
+        assertNotNull(exception);
+        assertEquals("Negative amount is not allowed", exception.getMessage());
+    }
 }
