@@ -32,3 +32,7 @@ This project is used to implement TDD Kata below:
 **`Test 8:`** when Account Exist With Insufficient Balance For Multiple Withdraw Then Thrown Exception
 
 **`Test 9:`** when Account Exist With Sufficient Balance For Multiple Withdraw Then Withdraw
+
+**`Test 10:`** when Account Exist With Sufficient Balance And Negative Amount Then Thrown Exception
+
+**`Test 11:`** when Account Exist With Sufficient Balance And Negative Amount Then Thrown Exception With Message
